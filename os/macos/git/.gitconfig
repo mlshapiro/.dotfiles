@@ -1,0 +1,7 @@
+[user]
+    name = Marc Shapiro
+    email = git@ms.tengr.net
+[core]
+    editor = nvim
+[credential]
+    helper = osxkeychain
