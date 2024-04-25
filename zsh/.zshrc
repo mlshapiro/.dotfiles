@@ -1,5 +1,7 @@
+# load secrets
 source ~/.zshsecrets
 
+# load custom pieces per OS
 case "$(uname -s)" in
    Darwin*)  source ~/.zshmacos;;
    Linux*)   source ~/.zshlinux;;
@@ -40,22 +42,21 @@ precmd() {
     fi
     cmd_running=false
 
-    # # set conda environment string
-    # if [[ -n $CONDA_DEFAULT_ENV ]]; then
-    #     newline=$'\n'
-    #     conda_env="%F{#555555}conda:$CONDA_DEFAULT_ENV$newline"
-    # else
-    #     conda_env=""
-    # fi
+    # set conda environment string
+    if [[ -n $CONDA_DEFAULT_ENV ]]; then
+        newline=$'\n'
+        conda_env="$newline%F{#666666}($CONDA_DEFAULT_ENV)$newline"
+    else
+        conda_env=""
+    fi
 }
-
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{green}+%f"
-zstyle ':vcs_info:*' unstagedstr "%F{red}+%f"
-zstyle ':vcs_info:git*' formats "%F{green}%b%f%c%u"
-zstyle ':vcs_info:git*' actionformats "%a %F{green}%f%c%u"
+zstyle ':vcs_info:*' unstagedstr "%F{red}*%f"
+zstyle ':vcs_info:git*' formats "%F{green}%b%f%c%u "
+zstyle ':vcs_info:git*' actionformats "(%a) "
 
 setopt prompt_subst
-export PROMPT='${conda_env}%F{#555555}${elapsed}s %F{blue}%1~%f %(?.%F{green}→.%F{red}→)%f '
-export RPROMPT='${vcs_info_msg_0_}'
+export PROMPT='${conda_env}%B%F{#00d2f5}%1~%f%b ${vcs_info_msg_0_}%(?.%F{green}❯.%F{red}❯)%f '
+export RPROMPT='%F{#666666}${elapsed}s %D{%T}%f'
