@@ -27,11 +27,13 @@ pipx install pipenv
 
 # install applications from homebrew
 brew install --cask iterm2
+brew install --cask postgres-unofficial
 
 # link config from this repository
 stow -t $HOME -d os/macos skhd
 stow -t $HOME -d os/macos yabai
 stow -t $HOME -d os/macos git
+stow -t $HOME conda
 stow -t $HOME nvim
 stow -t $HOME tmux
 stow -t $HOME zsh

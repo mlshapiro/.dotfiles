@@ -12,6 +12,7 @@ sudo apt install pipx
 pipx install bpytop
 pipx install pipenv
 
+# install neovim
 if [[ ! -d ~/nvim-linux64 ]]; then
    wget -P ~ https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
    pushd ~
@@ -21,6 +22,7 @@ if [[ ! -d ~/nvim-linux64 ]]; then
    popd
 fi
 
+# install miniforge
 if [[ ! -d ~/miniforge ]]; then
    mkdir -p ~/miniforge
    wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ~/miniforge/miniconda.sh
