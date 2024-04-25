@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt update
+sudo apt install git-all
 sudo apt install stow
 sudo apt install ripgrep
 sudo apt install jq
@@ -20,11 +21,11 @@ if [[ ! -d ~/nvim-linux64 ]]; then
    popd
 fi
 
-if [[ ! -d ~/miniforge3 ]]; then
-   mkdir -p ~/miniforge3
-   wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ~/miniforge3/miniconda.sh
-   bash ~/miniforge3/miniconda.sh -b -u -p ~/miniforge3
-   rm -rf ~/miniforge3/miniconda.sh
+if [[ ! -d ~/miniforge ]]; then
+   mkdir -p ~/miniforge
+   wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ~/miniforge/miniconda.sh
+   bash ~/miniforge/miniconda.sh -b -u -p ~/miniforge
+   rm -rf ~/miniforge/miniconda.sh
 fi
 
 stow -t $HOME -d os/linux git

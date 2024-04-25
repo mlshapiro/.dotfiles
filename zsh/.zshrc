@@ -1,7 +1,16 @@
-source ~/.zshconda
+source ~/.zshsecrets
 
+case "$(uname -s)" in
+   Darwin*)  source ~/.zshmacos;;
+   Linux*)   source ~/.zshlinux;;
+esac
+
+# paths
 export PATH="$HOME/nvim/bin:$HOME/.scripts:$HOME/.local/bin:$PATH"
 
+# aliases
+alias lg="lazygit"
+alias cac="conda activate contrails"
 alias nvo='fd --type f --exclude .git | fzf-tmux -p --reverse | xargs nvim'
 alias howmany='find . ! -name . -prune -print | grep -c /'
 alias copy='pbcopy'

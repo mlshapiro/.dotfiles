@@ -1,5 +1,9 @@
 #!/bin/bash
 
+brew install restic
+brew install rclone
+brew install gnupg
+brew install git
 brew install stow
 brew install yabai 
 brew install skhd
@@ -7,6 +11,8 @@ brew install pipx
 brew install ripgrep
 brew install jq
 brew install node
+brew install lazygit
+brew install miniforge
 
 pipx install bpytop
 pipx install pipenv
