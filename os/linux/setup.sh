@@ -20,11 +20,11 @@ if [[ ! -d ~/nvim-linux64 ]]; then
    popd
 fi
 
-if [[ ! -d ~/miniconda3 ]]; then
-   mkdir -p ~/miniconda3
-   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-   bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-   rm -rf ~/miniconda3/miniconda.sh
+if [[ ! -d ~/miniforge3 ]]; then
+   mkdir -p ~/miniforge3
+   wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ~/miniforge3/miniconda.sh
+   bash ~/miniforge3/miniconda.sh -b -u -p ~/miniforge3
+   rm -rf ~/miniforge3/miniconda.sh
 fi
 
 stow -t $HOME -d os/linux git

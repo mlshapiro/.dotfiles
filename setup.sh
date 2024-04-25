@@ -5,5 +5,5 @@ case "$(uname -s)" in
    Linux*)   os="linux";;
 esac
 
-echo "running setup for ${os}"
+echo "Running setup for ${os}"
 ./os/${os}/setup.sh

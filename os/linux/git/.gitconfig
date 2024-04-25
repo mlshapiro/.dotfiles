@@ -1,5 +1,11 @@
 [user]
     name = Marc Shapiro
     email = git@ms.tengr.net
-[core]
-    editor = nvim
+    signingkey = 8D287FD29FDCDE57013983408A036866D271DB68
+[init]
+    defaultBranch = main
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
