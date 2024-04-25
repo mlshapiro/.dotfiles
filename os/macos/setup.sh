@@ -24,6 +24,7 @@ brew install miniforge
 
 pipx install bpytop
 pipx install pipenv
+pipx install "python-lsp-server[all]"
 
 # install applications from homebrew
 brew install --cask iterm2

@@ -11,6 +11,7 @@ sudo apt install pipx
 
 pipx install bpytop
 pipx install pipenv
+pipx install "python-lsp-server[all]"
 
 # install neovim
 if [[ ! -d ~/nvim-linux64 ]]; then
