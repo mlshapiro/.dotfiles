@@ -40,14 +40,15 @@ precmd() {
     fi
     cmd_running=false
 
-    # set conda environment string
-    if [[ -n $CONDA_DEFAULT_ENV ]]; then
-        newline=$'\n'
-        conda_env="%F{#555555}conda:$CONDA_DEFAULT_ENV$newline"
-    else
-        conda_env=""
-    fi
+    # # set conda environment string
+    # if [[ -n $CONDA_DEFAULT_ENV ]]; then
+    #     newline=$'\n'
+    #     conda_env="%F{#555555}conda:$CONDA_DEFAULT_ENV$newline"
+    # else
+    #     conda_env=""
+    # fi
 }
+
 
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{green}+%f"
