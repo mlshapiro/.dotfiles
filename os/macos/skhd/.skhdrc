@@ -1,16 +1,16 @@
 # focus window
 
 # make floating window fill screen
-shift + alt - f     : yabai -m window --grid 1:1:0:0:0:0
+shift + ctrl + alt - f     : yabai -m window --grid 1:1:0:0:0:0
 
 # make floating window fill top half of screen
-shift + alt - up     : yabai -m window --grid 2:1:1:0:0:0
+shift + ctrl + alt - up     : yabai -m window --grid 2:1:1:0:0:0
 
 # make floating window fill bottom half of screen
-shift + alt - down   : yabai -m window --grid 2:1:1:1:0:0
+shift + ctrl + alt - down   : yabai -m window --grid 2:1:1:1:0:0
 
 # make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+shift + ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+shift + ctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1
