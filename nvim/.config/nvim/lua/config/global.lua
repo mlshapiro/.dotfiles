@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- tabs as three spaces
-local tabsize = 3
+-- tabs as 4 spaces
+local tabsize = 4
 vim.opt.expandtab = true
 vim.opt.shiftwidth = tabsize
 vim.opt.tabstop = tabsize
@@ -10,6 +10,7 @@ vim.opt.tabstop = tabsize
 if not vim.g.vscode then
    -- proper colors
    vim.opt.termguicolors = true
+   vim.cmd("colorscheme predawn")
 
    -- line numbers
    vim.opt.number = true
