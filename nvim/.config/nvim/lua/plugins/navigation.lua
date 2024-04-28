@@ -47,17 +47,21 @@ return {
          vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
          vim.keymap.set("n", "<leader>xr", function() require("trouble").toggle("lsp_references") end)
       end
-   }
+   },
 
-   -- {
-   --    "nvim-tree/nvim-tree.lua",
-   --    version = "*",
-   --    lazy = false,
-   --    dependencies = {
-   --       "nvim-tree/nvim-web-devicons",
-   --    },
-   --    config = function()
-   --       require("nvim-tree").setup {}
-   --    end,
-   -- }
+   {
+      "nvim-tree/nvim-tree.lua",
+      cond = not vim.g.vscode,
+      version = "*",
+      lazy = false,
+      dependencies = {
+         "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+         require("nvim-tree").setup({})
+
+         -- global
+         vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
+      end
+   }
 }
