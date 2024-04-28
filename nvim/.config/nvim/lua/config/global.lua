@@ -10,7 +10,7 @@ vim.opt.tabstop = tabsize
 if not vim.g.vscode then
    -- proper colors
    vim.opt.termguicolors = true
-   vim.cmd("colorscheme predawn")
+   -- vim.cmd("colorscheme predawn")
 
    -- line numbers
    vim.opt.number = true
