@@ -36,3 +36,4 @@ stow -t $HOME conda
 stow -t $HOME nvim
 stow -t $HOME tmux
 stow -t $HOME zsh
+stow -t $HOME lazygit

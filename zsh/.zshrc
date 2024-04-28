@@ -11,13 +11,13 @@ esac
 export PATH="$HOME/nvim/bin:$HOME/.scripts:$HOME/.local/bin:$PATH"
 
 # aliases
-alias lg="lazygit"
-alias cac="conda activate contrails"
+alias lg='lazygit --use-config-dir=$HOME/.config/lazygit'
+alias cac='conda activate contrails'
 alias nvo='fd --type f --exclude .git | fzf-tmux -p --reverse | xargs nvim'
 alias howmany='find . ! -name . -prune -print | grep -c /'
 alias copy='pbcopy'
 alias ls='ls -G --color=auto'
-alias ll="ls -laG --color=auto"
+alias ll='ls -laG --color=auto'
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
