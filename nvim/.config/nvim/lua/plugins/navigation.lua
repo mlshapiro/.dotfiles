@@ -64,6 +64,14 @@ return {
 
             -- Add source selector
             require("neo-tree").setup({
+                filesystem = {
+                    filtered_items = {
+                        --visible = true,
+                        hide_dotfiles = false,
+                        hide_gitignored = true,
+                        never_show = { ".git" },
+                    }
+                },
                 source_selector = {
                     winbar = true,
                     statusline = false
