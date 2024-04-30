@@ -24,10 +24,4 @@ if not vim.g.vscode then
    -- better indentation
    vim.opt.smartindent = true
    vim.opt.breakindent = true
-
-   -- navigation between windows
-   vim.keymap.set("n", "<C-Left>", "<C-w><Left>")
-   vim.keymap.set("n", "<C-Right>", "<C-w><Right>")
-   vim.keymap.set("n", "<C-Up>", "<C-w><Up>")
-   vim.keymap.set("n", "<C-Down>", "<C-w><Down>")
 end

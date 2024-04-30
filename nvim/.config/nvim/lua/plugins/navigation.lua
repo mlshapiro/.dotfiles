@@ -51,6 +51,7 @@ return {
 
     {
         "nvim-neo-tree/neo-tree.nvim",
+        cond = not vim.g.vscode,
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -87,6 +88,7 @@ return {
     },
     {
         'romgrk/barbar.nvim',
+        cond = not vim.g.vscode,
         version = '^1.0.0',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -99,6 +101,6 @@ return {
             -- animation = true,
             -- insert_at_start = true,
             -- …etc.
-        },
-    },
+        }
+    }
 }
