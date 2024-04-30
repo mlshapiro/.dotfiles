@@ -100,7 +100,7 @@ return {
             -- Move to previous/next
             vim.keymap.set('n', '<leader>,', '<Cmd>BufferPrevious<CR>')
             vim.keymap.set('n', '<leader>.', '<Cmd>BufferNext<CR>')
-            
+
             -- Re-order to previous/next
             vim.keymap.set('n', '<leader><', '<Cmd>BufferMovePrevious<CR>')
             vim.keymap.set('n', '<leader>>', '<Cmd>BufferMoveNext<CR>')
@@ -116,7 +116,7 @@ return {
             vim.keymap.set('n', '<leader>8', '<Cmd>BufferGoto 8<CR>')
             vim.keymap.set('n', '<leader>9', '<Cmd>BufferGoto 9<CR>')
             vim.keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
-            
+
             -- Pin/unpin buffer
             vim.keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>')
 
@@ -126,7 +126,7 @@ return {
             vim.keymap.set('n', '<leader>cp', '<Cmd>BufferCloseAllButPinned<CR>')
             vim.keymap.set('n', '<leader>cr', '<Cmd>BufferCloseBuffersRight<CR>')
             vim.keymap.set('n', '<leader>cl', '<Cmd>BufferCloseBuffersLeft<CR>')
-            
+
             -- Magic buffer-picking mode
             -- vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
 
@@ -142,5 +142,32 @@ return {
             -- insert_at_start = true,
             -- …etc.
         }
-    }
+    },
+    {
+        "coffebar/neovim-project",
+        lazy = false,
+        priority = 100,
+        dependencies = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+            { "Shatur/neovim-session-manager" },
+        },
+        opts = {
+            projects = {
+                "~/computing/contrailcirrus/*",
+                "~/computing/mlshapiro/*",
+                "~/computing/mlshapiro/.dotfiles",
+            }
+        },
+        init = function()
+            -- enable saving the state of plugins in the session
+            vim.opt.sessionoptions:append("globals")
+
+            -- mappings
+            vim.keymap.set('n', '<leader>fp', ':Telescope neovim-project discover<CR>')
+
+        end,
+
+
+    },
 }
