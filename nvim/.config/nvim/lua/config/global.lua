@@ -24,4 +24,8 @@ if not vim.g.vscode then
    -- better indentation
    vim.opt.smartindent = true
    vim.opt.breakindent = true
+
+   -- autowrite
+   vim.opt.autowriteall = false
+
 end

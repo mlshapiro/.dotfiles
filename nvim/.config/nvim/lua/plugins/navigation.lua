@@ -95,7 +95,47 @@ return {
             'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         },
         init = function() 
-            vim.g.barbar_auto_setup = false 
+            vim.g.barbar_auto_setup = false
+
+            -- Move to previous/next
+            vim.keymap.set('n', '<leader>,', '<Cmd>BufferPrevious<CR>')
+            vim.keymap.set('n', '<leader>.', '<Cmd>BufferNext<CR>')
+            
+            -- Re-order to previous/next
+            vim.keymap.set('n', '<leader><', '<Cmd>BufferMovePrevious<CR>')
+            vim.keymap.set('n', '<leader>>', '<Cmd>BufferMoveNext<CR>')
+
+            -- Goto buffer in position...
+            vim.keymap.set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>')
+            vim.keymap.set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>')
+            vim.keymap.set('n', '<leader>3', '<Cmd>BufferGoto 3<CR>')
+            vim.keymap.set('n', '<leader>4', '<Cmd>BufferGoto 4<CR>')
+            vim.keymap.set('n', '<leader>5', '<Cmd>BufferGoto 5<CR>')
+            vim.keymap.set('n', '<leader>6', '<Cmd>BufferGoto 6<CR>')
+            vim.keymap.set('n', '<leader>7', '<Cmd>BufferGoto 7<CR>')
+            vim.keymap.set('n', '<leader>8', '<Cmd>BufferGoto 8<CR>')
+            vim.keymap.set('n', '<leader>9', '<Cmd>BufferGoto 9<CR>')
+            vim.keymap.set('n', '<leader>0', '<Cmd>BufferLast<CR>')
+            
+            -- Pin/unpin buffer
+            vim.keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>')
+
+            -- Close buffer
+            vim.keymap.set('n', '<leader>cc', '<Cmd>BufferClose<CR>')
+            vim.keymap.set('n', '<leader>ca', '<Cmd>BufferCloseAllButCurrent<CR>')
+            vim.keymap.set('n', '<leader>cp', '<Cmd>BufferCloseAllButPinned<CR>')
+            vim.keymap.set('n', '<leader>cr', '<Cmd>BufferCloseBuffersRight<CR>')
+            vim.keymap.set('n', '<leader>cl', '<Cmd>BufferCloseBuffersLeft<CR>')
+            
+            -- Magic buffer-picking mode
+            -- vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
+
+            -- Sort automatically by...
+            vim.keymap.set('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>')
+            vim.keymap.set('n', '<leader>bn', '<Cmd>BufferOrderByName<CR>')
+            vim.keymap.set('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>')
+            vim.keymap.set('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>')
+            vim.keymap.set('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
         end,
         opts = {
             -- animation = true,
