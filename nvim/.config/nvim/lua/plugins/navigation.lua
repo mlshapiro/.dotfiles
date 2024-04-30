@@ -10,8 +10,28 @@ return {
         'nvim-telescope/telescope.nvim',
         cond = not vim.g.vscode,
         tag = '0.1.5',
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = { 
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-project.nvim'
+        },
         config = function()
+
+            -- projects
+            require('telescope').load_extension('project')
+            -- local project_actions = require('telescope._extensions.project.actions')
+            
+            require('telescope').setup({
+                extensions = {
+                project = {
+                  base_dirs = {
+                    '~/computing/contrailcirrus/pycontrails',
+                    '~/computing/contrailcirrus/admin',
+                  },
+                }
+                }
+            })
+
+            -- mappings
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -142,5 +162,6 @@ return {
             -- insert_at_start = true,
             -- …etc.
         }
-    }
+    },
+
 }
