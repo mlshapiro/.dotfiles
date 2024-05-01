@@ -164,6 +164,10 @@ return {
         init = function()
             -- enable saving the state of plugins in the session
             vim.opt.sessionoptions:append("globals")
+
+            -- Set shortcut to toggle
+            vim.keymap.set("n", "<leader>fp", "<Cmd>Telescope neovim-project discover<CR>")
+            vim.keymap.set("n", "<leader>fh", "<Cmd>Telescope neovim-project history<CR>")
         end
     }
 }
