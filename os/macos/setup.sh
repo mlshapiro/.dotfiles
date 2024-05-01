@@ -21,6 +21,7 @@ brew install jq
 brew install node
 brew install pipx
 brew install miniforge
+brew install lua-language-server
 
 pipx install bpytop
 pipx install pipenv

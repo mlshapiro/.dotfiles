@@ -16,17 +16,17 @@ return {
                     local gitsigns = require('gitsigns')
 
                     -- Navigation
-                    vim.keymap.set('n', ']c', function()
+                    vim.keymap.set('n', ']g', function()
                         if vim.wo.diff then
-                            vim.cmd.normal({']c', bang = true})
+                            vim.cmd.normal({']g', bang = true})
                         else
                             gitsigns.nav_hunk('next')
                         end
                     end)
 
-                    vim.keymap.set('n', '[c', function()
+                    vim.keymap.set('n', '[g', function()
                         if vim.wo.diff then
-                            vim.cmd.normal({'[c', bang = true})
+                            vim.cmd.normal({'[g', bang = true})
                         else
                             gitsigns.nav_hunk('prev')
                         end
@@ -42,10 +42,10 @@ return {
                     vim.keymap.set('n', '<leader>hR', gitsigns.reset_buffer)
                     vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk)
                     vim.keymap.set('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
-                    vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame)
                     vim.keymap.set('n', '<leader>hd', gitsigns.diffthis)
                     vim.keymap.set('n', '<leader>hD', function() gitsigns.diffthis('~') end)
                     vim.keymap.set('n', '<leader>td', gitsigns.toggle_deleted)
+                    vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame)
 
                     -- Text object
                     vim.keymap.set({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')

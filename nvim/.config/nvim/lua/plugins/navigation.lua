@@ -61,10 +61,11 @@ return {
         },
         config = function()
             -- Set shortcut to toggle
-            vim.keymap.set("n", "<C-b>", ":Neotree toggle<CR>")
+            vim.keymap.set("n", "<leader>b", ":Neotree toggle<CR>")
 
             -- Add source selector
             require("neo-tree").setup({
+                close_if_last_window = true,
                 filesystem = {
                     filtered_items = {
                         --visible = true,
@@ -143,31 +144,48 @@ return {
             -- …etc.
         }
     },
-    {
-        "coffebar/neovim-project",
-        lazy = false,
-        priority = 100,
-        dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
-            { "Shatur/neovim-session-manager" },
-        },
-        opts = {
-            projects = {
-                "~/computing/contrailcirrus/*",
-                "~/computing/mlshapiro/*",
-                "~/computing/mlshapiro/.dotfiles",
-            }
-        },
-        init = function()
-            -- enable saving the state of plugins in the session
-            vim.opt.sessionoptions:append("globals")
+    { 
+        'gnikdroy/projections.nvim',
+        branch = 'pre_release',
+        config = function()
+            require("projections").setup({
+                workspaces = {
+                    "~/computing/contrailcirrus/*",
+                    "~/computing/mlshapiro/*",
+                    "~/computing/mlshapiro/.dotfiles",
+                },
+                -- patterns = { ".git", ".svn", ".hg" },      -- Default patterns to use if none were specified. These are NOT regexps.
+                -- store_hooks = { pre = nil, post = nil },   -- pre and post hooks for store_session, callable | nil
+                -- restore_hooks = { pre = nil, post = nil }, -- pre and post hooks for restore_session, callable | nil
+                workspaces_file = "~/.local/share/nvim/projection.json", -- Path to workspaces json file
+                sessions_directory = "~/.local/share/nvim/projection",   -- Directory where sessions are stored
+            })
 
-            -- mappings
-            vim.keymap.set('n', '<leader>fp', ':Telescope neovim-project discover<CR>')
+            -- Bind <leader>fp to Telescope projections
+            require('telescope').load_extension('projections')
+            vim.keymap.set("n", "<leader>fp", function() vim.cmd("Telescope projections") end)
 
+            -- Autostore session on VimExit
+            local Session = require("projections.session")
+            vim.api.nvim_create_autocmd({ 'VimLeavePre' }, {
+                callback = function() Session.store(vim.loop.cwd()) end,
+            })
+
+            -- Switch to project if vim was started in a project dir, restore session
+            local switcher = require("projections.switcher")
+            vim.api.nvim_create_autocmd({ "VimEnter" }, {
+                callback = function()
+                    if vim.fn.argc() ~= 0 then return end
+                    local session_info = Session.info(vim.loop.cwd())
+                    if session_info == nil then
+                        Session.restore_latest()
+                    else
+                        Session.restore(vim.loop.cwd())
+                    end
+                end,
+                desc = "Restore last session automatically"
+            })
         end,
 
-
-    },
+    }
 }
