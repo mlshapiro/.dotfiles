@@ -61,12 +61,13 @@ return {
         },
         config = function()
             -- Set shortcut to toggle
-            vim.keymap.set("n", "<leader>b", ":Neotree toggle<CR>")
+            vim.keymap.set("n", "<leader>bb", "<Cmd>Neotree toggle<CR>")
 
             -- Add source selector
             require("neo-tree").setup({
                 close_if_last_window = true,
                 filesystem = {
+                    hijack_netrw_behavior = "open_current",
                     filtered_items = {
                         --visible = true,
                         hide_dotfiles = false,
@@ -95,7 +96,7 @@ return {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
             'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         },
-        init = function() 
+        init = function()
             vim.g.barbar_auto_setup = false
 
             -- Move to previous/next
@@ -144,15 +145,14 @@ return {
             -- …etc.
         }
     },
-    { 
+    {
         'gnikdroy/projections.nvim',
         branch = 'pre_release',
         config = function()
             require("projections").setup({
                 workspaces = {
-                    "~/computing/contrailcirrus/*",
-                    "~/computing/mlshapiro/*",
-                    "~/computing/mlshapiro/.dotfiles",
+                    "~/computing/contrailcirrus",
+                    "~/computing/mlshapiro",
                 },
                 -- patterns = { ".git", ".svn", ".hg" },      -- Default patterns to use if none were specified. These are NOT regexps.
                 -- store_hooks = { pre = nil, post = nil },   -- pre and post hooks for store_session, callable | nil
@@ -172,7 +172,6 @@ return {
             })
 
             -- Switch to project if vim was started in a project dir, restore session
-            local switcher = require("projections.switcher")
             vim.api.nvim_create_autocmd({ "VimEnter" }, {
                 callback = function()
                     if vim.fn.argc() ~= 0 then return end
@@ -185,6 +184,8 @@ return {
                 end,
                 desc = "Restore last session automatically"
             })
+
+            vim.opt.sessionoptions:append("localoptions")       -- Save localoptions to session file
         end,
 
     }
