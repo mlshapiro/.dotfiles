@@ -14,8 +14,8 @@ brew install lazygit
 brew install stow
 brew install restic
 brew install rclone
-brew install yabai 
-brew install skhd
+brew install koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/skhd
 brew install ripgrep
 brew install jq
 brew install fzf
@@ -44,9 +44,10 @@ stow -t $HOME zsh
 stow -t $HOME lazygit
 
 # link config from nextcloud
-if [[ ! -d ~/nextcloud.shamith.net ]]; then
+if [[ -d ~/nextcloud.shamith.net ]]; then
     stow -t $HOME -d ~/nextcloud.shamith.net/computing secrets
     stow -t $HOME -d ~/nextcloud.shamith.net/computing rclone
 else
-    exit "~/nextcloud.shamith.net directory required"
+    echo "Failed to get secrets: ~/nextcloud.shamith.net directory required"
+    exit 1
 fi
