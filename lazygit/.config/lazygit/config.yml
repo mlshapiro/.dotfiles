@@ -1,2 +1,6 @@
+git:
+  log:
+    showGraph: 'always'
+    showWholeGraph: true
 os:
   editPreset: 'nvim'

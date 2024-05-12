@@ -7,7 +7,6 @@ return {
          require("ibl").setup({})
       end
    },
-
    {
       "kylechui/nvim-surround",
       cond = not vim.g.vscode,
@@ -16,7 +15,6 @@ return {
          require("nvim-surround").setup({})
       end
    },
-
    {
       "windwp/nvim-autopairs",
       cond = not vim.g.vscode,

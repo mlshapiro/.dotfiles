@@ -14,7 +14,6 @@ return {
          })
       end
    },
-
    {
       "neovim/nvim-lspconfig",
       cond = not vim.g.vscode,
@@ -144,6 +143,5 @@ return {
 
    { "hrsh7th/cmp-nvim-lsp", cond = not vim.g.vscode },
    { "hrsh7th/cmp-nvim-lsp-signature-help", cond = not vim.g.vscode },
-
    { "hrsh7th/vim-vsnip",    cond = not vim.g.vscode }
 }
