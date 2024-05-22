@@ -8,6 +8,9 @@ sudo apt install jq
 sudo apt install build-essential
 sudo apt install zsh
 sudo apt install pipx
+sudo apt-get install ripgrep
+sudo apt install fzf
+sudo apt-get install jq
 
 pipx install bpytop
 pipx install pipenv

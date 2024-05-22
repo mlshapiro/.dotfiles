@@ -18,10 +18,12 @@ brew install yabai
 brew install skhd
 brew install ripgrep
 brew install jq
+brew install fzf
 brew install node
 brew install pipx
 brew install miniforge
 brew install lua-language-server
+brew install yazi
 
 pipx install bpytop
 pipx install pipenv
