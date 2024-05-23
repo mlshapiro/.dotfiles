@@ -13,5 +13,5 @@
     required = true
 [pull]
   ff = only
-[pull]
+[fetch]
   prune = true
