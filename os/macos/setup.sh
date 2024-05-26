@@ -47,6 +47,8 @@ stow -t $HOME lazygit
 if [[ -d ~/nextcloud.shamith.net ]]; then
     stow -t $HOME -d ~/nextcloud.shamith.net/computing secrets
     stow -t $HOME -d ~/nextcloud.shamith.net/computing rclone
+
+    sudo chmod -R 0600 ~/nextcloud.shamith.net/computing/secrets/.ssh
 else
     echo "Failed to get secrets: ~/nextcloud.shamith.net directory required"
     exit 1
