@@ -31,7 +31,7 @@ pipx install "python-lsp-server[all]"
 
 # install applications from homebrew
 brew install --cask iterm2
-brew install --cask postgres-unofficial
+# brew install --cask postgres-unofficial
 
 # link config from this repository
 stow -t $HOME -d os/macos skhd
