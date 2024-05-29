@@ -69,5 +69,5 @@ zstyle ':vcs_info:git*' formats "%F{green}%b%f%c%u "
 zstyle ':vcs_info:git*' actionformats "(%a) "
 
 setopt prompt_subst
-export PROMPT='${conda_env}%B%F{#00d2f5}%1~%f%b ${vcs_info_msg_0_}%(?.%F{green}❯.%F{red}❯)%f '
+export PROMPT='${conda_env}%B%F{#00d2f5}%1~/%f%b ${vcs_info_msg_0_}%(?.%F{green}❯.%F{red}❯)%f '
 export RPROMPT='%F{#666666}${elapsed}s %D{%T}%f'
