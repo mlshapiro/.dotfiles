@@ -72,19 +72,27 @@ macos:
 	brew install rclone
 	brew install koekeishiya/formulae/yabai
 	brew install koekeishiya/formulae/skhd
+	
+	# terminal stuff
 	brew install ripgrep
 	brew install jq
 	brew install fzf
-	brew install node
-	brew install pipx
-	brew install miniforge
-	brew install lua-language-server
+	brew install fd
 	brew install yazi
 	brew install fish
+	
+	# neovim
+	brew install neovim
+	brew install lua-language-server
 
-	pipx install bpytop
+	# languages
+	brew install node
+	brew install miniforge
+	brew install pipx
 	pipx install pipenv
 	pipx install "python-lsp-server[all]"
+	pipx install bpytop
+
 
 	# install applications from homebrew
 	brew install --cask kitty
