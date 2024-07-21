@@ -10,6 +10,6 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.relativenumber = false -- Turn off relative line numbers
 
 -- Python options
-vim.g.lazyvim_python_lsp = "mypy" -- "pyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+-- vim.g.lazyvim_python_lsp = "mypy" -- "pyright"
+-- vim.g.lazyvim_python_ruff = "ruff_lsp"
 
