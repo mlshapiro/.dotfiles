@@ -1,0 +1,25 @@
+[
+  {
+    "context": "Editor && jupyter && !ContextEditor",
+    "bindings": {
+      "ctrl-shift-enter": "repl::Run",
+      "cmd-shift-backspace": "repl::ClearOutputs",
+      "cmd-shift+enter": [
+        "workspace::SendKeystrokes",
+        "# space % % enter backspace backspace"
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-r": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-i": "editor::Hover"
+    }
+  }
+]

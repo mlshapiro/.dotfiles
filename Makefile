@@ -17,6 +17,8 @@ stow:
 	stow -t $(HOME) yazi
 	stow -t $(HOME) fish
 	stow -t $(HOME) kitty
+	stow -t $(HOME) zed
+	stow -t $(HOME) wezterm
 
 ubuntu:
 	sudo apt update
@@ -103,6 +105,7 @@ macos:
 	stow -t $(HOME) -d os/macos skhd
 	stow -t $(HOME) -d os/macos yabai
 	stow -t $(HOME) -d os/macos git
+	stow -t $(HOME) -d os/macos Library
 
 	# link config from nextcloud
 	if [[ -d ~/nextcloud.shamith.net ]]; then

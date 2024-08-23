@@ -20,5 +20,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# open default location
+# prefer to use terminal emulator so it can be overwritten
+# cd /Users/marcshapiro/computing/contrailcirrus
+
 # activate default environment
 conda activate contrails
