@@ -16,7 +16,6 @@ stow:
 	stow -t $(HOME) lazygit
 	stow -t $(HOME) yazi
 	stow -t $(HOME) fish
-	stow -t $(HOME) kitty
 	stow -t $(HOME) zed
 	stow -t $(HOME) wezterm
 
@@ -58,8 +57,6 @@ ubuntu:
 	stow -t $HOME -d os/linux git
 
 macos:
-	# remove terminal from dark mode theme
-	defaults write com.apple.Terminal NSRequiresAquaSystemAppearance -bool YES
 
 	# show all hidden files
 	defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder
@@ -75,7 +72,7 @@ macos:
 	brew install koekeishiya/formulae/yabai
 	brew install koekeishiya/formulae/skhd
 	
-	# terminal stuff
+	# terminal
 	brew install ripgrep
 	brew install jq
 	brew install fzf
@@ -95,9 +92,7 @@ macos:
 	pipx install "python-lsp-server[all]"
 	pipx install bpytop
 
-
 	# install applications from homebrew
-	brew install --cask kitty
 	# brew install --cask iterm2
 	# brew install --cask postgres-unofficial
 
