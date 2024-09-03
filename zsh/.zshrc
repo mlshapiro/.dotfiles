@@ -18,6 +18,7 @@ alias howmany='find . ! -name . -prune -print | grep -c /'
 alias copy='pbcopy'
 alias ls='ls -G --color=auto'
 alias ll='ls -laG --color=auto'
+alias jl='jupyter lab'
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
