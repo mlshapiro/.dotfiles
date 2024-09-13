@@ -7,6 +7,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "format_on_save": "off",
+  "soft_wrap": "editor_width",
   "features": {
     "inline_completion_provider": "none"
   },
