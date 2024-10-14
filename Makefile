@@ -91,10 +91,16 @@ macos:
 	pipx install pipenv
 	pipx install "python-lsp-server[all]"
 	pipx install bpytop
+	brew install chruby ruby-install
+	
+	# https://jekyllrb.com/docs/installation/macos/
+	ruby-install ruby 3.3.5  
 
 	# install applications from homebrew
 	# brew install --cask iterm2
 	# brew install --cask postgres-unofficial
+	# brew install --cask zed
+	# brew install --cask zen-browser
 
 	# link config from this repository
 	stow -t $(HOME) -d os/macos skhd
