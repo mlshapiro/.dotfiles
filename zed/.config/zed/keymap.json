@@ -11,6 +11,15 @@
     }
   },
   {
+  "context": "Editor",
+    "bindings": {
+      "ctrl-shift-b": [
+        "workspace::SendKeystrokes",
+        "import space ipdb; space ipdb.set_trace()"
+      ]
+    }
+  },
+  {
     "context": "Workspace",
     "bindings": {
       "cmd-k cmd-r": "workspace::ToggleRightDock"

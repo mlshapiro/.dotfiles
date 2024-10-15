@@ -7,8 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  // "experimental.theme_overrides": {
+  //   "editor.background": "#1a1a22"
+  // },
   "format_on_save": "off",
   "soft_wrap": "editor_width",
+  "wrap_guides": [100],
   "features": {
     "inline_completion_provider": "none"
   },
@@ -41,6 +50,9 @@
           "arguments": ["-m", "ruff", "format", "-", "--line-length=120"]
         }
       }
+    },
+    "Markdown": {
+      "format_on_save": "off"
     }
   }
 }
