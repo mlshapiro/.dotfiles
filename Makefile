@@ -19,6 +19,11 @@ stow:
 	stow -t $(HOME) zed
 	stow -t $(HOME) wezterm
 
+	# Add scripts directory
+	sudo chmod 0755 scripts/.scripts/*
+	stow -t $(HOME) scripts
+
+
 ubuntu:
 	sudo apt update
 	sudo apt install git-all
@@ -54,7 +59,7 @@ ubuntu:
 	   rm -rf ~/miniforge/miniconda.sh
 	fi
 
-	stow -t $HOME -d os/linux git
+	stow -t $(HOME) -d os/linux git
 
 macos:
 
@@ -71,7 +76,7 @@ macos:
 	brew install rclone
 	brew install koekeishiya/formulae/yabai
 	brew install koekeishiya/formulae/skhd
-	
+
 	# terminal
 	brew install ripgrep
 	brew install jq
@@ -79,7 +84,7 @@ macos:
 	brew install fd
 	brew install yazi
 	brew install fish
-	
+
 	# neovim
 	brew install neovim
 	brew install lua-language-server
@@ -92,15 +97,18 @@ macos:
 	pipx install "python-lsp-server[all]"
 	pipx install bpytop
 	brew install chruby ruby-install
-	
+
 	# https://jekyllrb.com/docs/installation/macos/
-	ruby-install ruby 3.3.5  
+	ruby-install ruby 3.3.5
 
 	# install applications from homebrew
 	# brew install --cask iterm2
 	# brew install --cask postgres-unofficial
 	# brew install --cask zed
 	# brew install --cask zen-browser
+
+	# stow
+	make stow
 
 	# link config from this repository
 	stow -t $(HOME) -d os/macos skhd
@@ -119,4 +127,3 @@ macos:
 		echo "Failed to get secrets: ~/nextcloud.shamith.net directory required"
 		exit 1
 	fi
-	
