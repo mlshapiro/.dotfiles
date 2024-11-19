@@ -15,14 +15,17 @@
     "bindings": {
       "ctrl-shift-b": [
         "workspace::SendKeystrokes",
-        "import space ipdb; space ipdb.set_trace()"
-      ]
+        "import space pdb; space pdb.set_trace()"
+      ],
+      "cmd-shift-c": "editor::CopyPermalinkToLine",
+      "cmd-k cmd-d": "terminal_panel::ToggleFocus"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-k cmd-r": "workspace::ToggleRightDock"
+      "cmd-k cmd-r": "workspace::ToggleRightDock",
+      "cmd-k cmd-d": "workspace::ToggleBottomDock"
     }
   },
   {

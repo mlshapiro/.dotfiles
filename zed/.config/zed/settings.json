@@ -9,8 +9,8 @@
 {
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Kanagawa",
+    "dark": "Kanagawa"
   },
   // "experimental.theme_overrides": {
   //   "editor.background": "#1a1a22"
