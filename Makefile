@@ -7,24 +7,20 @@ help:
 
 .PHONY: help
 
-
 stow:
+	# Generic stow directories regardless of platform
 	stow -t $(HOME) conda
 	stow -t $(HOME) nvim
 	stow -t $(HOME) tmux
 	stow -t $(HOME) zsh
 	stow -t $(HOME) lazygit
 	stow -t $(HOME) yazi
-	stow -t $(HOME) fish
-	stow -t $(HOME) zed
-	stow -t $(HOME) wezterm
 
 	# Add scripts directory
 	sudo chmod 0755 scripts/.scripts/*
 	stow -t $(HOME) scripts
 
-
-ubuntu:
+vm:
 	sudo apt update
 	sudo apt install git-all
 	sudo apt install stow
@@ -33,23 +29,18 @@ ubuntu:
 	sudo apt install build-essential
 	sudo apt install zsh
 	sudo apt install pipx
-	sudo apt-get install ripgrep
 	sudo apt install fzf
-	sudo apt-get install jq
+	sudo apt install neovim
 
 	pipx install bpytop
 	pipx install pipenv
 	pipx install "python-lsp-server[all]"
 
-	# install neovim
-	if [[ ! -d ~/nvim-linux64 ]]; then
-	   wget -P ~ https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-	   pushd ~
-	   tar xvzf nvim-linux64.tar.gz
-	   rm nvim-linux64.tar.gz
-	   mv nvim-linux64 nvim
-	   popd
-	fi
+	# install rust
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+	# rust utilities
+	cargo install --locked yazi-fm yazi-cli
 
 	# install miniforge
 	if [[ ! -d ~/miniforge ]]; then
@@ -59,6 +50,8 @@ ubuntu:
 	   rm -rf ~/miniforge/miniconda.sh
 	fi
 
+	# link config from this repository
+	make stow
 	stow -t $(HOME) -d os/linux git
 
 macos:
@@ -83,7 +76,7 @@ macos:
 	brew install fzf
 	brew install fd
 	brew install yazi
-	brew install fish
+	# brew install fish
 
 	# neovim
 	brew install neovim
@@ -101,19 +94,23 @@ macos:
 	# https://jekyllrb.com/docs/installation/macos/
 	ruby-install ruby 3.3.5
 
+	# install rust
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 	# install applications from homebrew
 	# brew install --cask iterm2
 	# brew install --cask postgres-unofficial
 	# brew install --cask zed
 	# brew install --cask zen-browser
 
-	# stow
+	# stow for macos
 	make stow
-
-	# link config from this repository
+	stow -t $(HOME) fish
+	stow -t $(HOME) zed
+	stow -t $(HOME) wezterm
+	stow -t $(HOME) -d os/macos git
 	stow -t $(HOME) -d os/macos skhd
 	stow -t $(HOME) -d os/macos yabai
-	stow -t $(HOME) -d os/macos git
 	stow -t $(HOME) -d os/macos Library
 
 	# link config from nextcloud
