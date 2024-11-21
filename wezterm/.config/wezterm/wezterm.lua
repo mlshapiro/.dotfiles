@@ -45,19 +45,19 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
-  {
-    key = "DownArrow",
-    mods = "CMD",
-    action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
-  },
-  {
-    key = "UpArrow",
-    mods = "CMD",
-    action = wezterm.action.SplitPane({ direction = "Up" }),
-  },
 	{
-		key = "d",
+		key = "DownArrow",
 		mods = "CMD",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "UpArrow",
+		mods = "CMD",
+		action = wezterm.action.SplitPane({ direction = "Up" }),
+	},
+	{
+		key = "w",
+		mods = "CMD|SHIFT",
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	{
