@@ -1,0 +1,30 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"AutoDocstring",
+	],
+	"installed_packages":
+	[
+		"AutoDocstring",
+		"Dockerfile Syntax Highlighting",
+		"INI",
+		"JSON Reindent",
+		"JsPrettier",
+		"MarkdownEditing",
+		"Package Control",
+		"Predawn",
+		"Protobuf Syntax Hightlighting",
+		"Python Breakpoints",
+		"Sass",
+		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeLinter-contrib-markdownlint",
+		"SublimeLinter-flake8",
+		"SublimeLinter-mypy",
+		"SublimeLinter-pydocstyle",
+		"TOML",
+		"TypeScript",
+		"Vue",
+	],
+}
