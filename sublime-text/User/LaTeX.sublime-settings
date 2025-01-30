@@ -4,5 +4,5 @@
     "gutter": true,
     "trim_trailing_white_space_on_save": "all",
     "rulers": [100],
-    "word_wrap": false
+    "word_wrap": true
 }

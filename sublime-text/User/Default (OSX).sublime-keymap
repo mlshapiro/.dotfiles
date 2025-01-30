@@ -1,0 +1,7 @@
+[
+   {
+        "keys": ["super+="],
+        "command": "lsp_format_document",
+        "context": [{"key": "lsp.session_with_capability", "operand": "documentFormattingProvider | documentRangeFormattingProvider"}]
+    },
+]

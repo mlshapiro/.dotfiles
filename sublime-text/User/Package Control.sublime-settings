@@ -14,6 +14,7 @@
 		"LSP-marksman",
 		"LSP-pyright",
 		"LSP-ruff",
+		"LSP-TexLab",
 		"LSP-typescript",
 		"MarkdownEditing",
 		"Package Control",
