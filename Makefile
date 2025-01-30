@@ -54,6 +54,20 @@ vm:
 	make stow
 	stow -t $(HOME) -d os/linux git
 
+linux:
+	# start from vm install
+	make vm
+
+	# sublime text config
+	stow -t $(HOME)/.config/sublime-text/Packages sublime-text
+
+	# # install zed
+	# curl -f https://zed.dev/install.sh | sh
+	# stow -t $(HOME) zed
+
+	# # install wezterm
+	# stow -t $(HOME) wezterm
+
 macos:
 
 	# show all hidden files
@@ -98,6 +112,8 @@ macos:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 	# install applications from homebrew
+	brew install --cask sublime-text
+	brew install --cask sublime-merge
 	# brew install --cask iterm2
 	# brew install --cask postgres-unofficial
 	# brew install --cask zed
@@ -105,13 +121,14 @@ macos:
 
 	# stow for macos
 	make stow
-	stow -t $(HOME) fish
 	stow -t $(HOME) zed
 	stow -t $(HOME) wezterm
 	stow -t $(HOME) -d os/macos git
 	stow -t $(HOME) -d os/macos skhd
 	stow -t $(HOME) -d os/macos yabai
 	stow -t $(HOME) -d os/macos Library
+	stow -t $(HOME)/Library/Application\ Support/Sublime\ Text/Packages sublime-text
+	# stow -t $(HOME) fish
 
 	# link config from nextcloud
 	if [[ -d ~/nextcloud.shamith.net ]]; then
