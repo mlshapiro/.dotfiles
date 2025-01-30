@@ -9,7 +9,7 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Kanagawa",
+    "light": "One Light",
     "dark": "Kanagawa"
   },
   // "experimental.theme_overrides": {
@@ -26,7 +26,7 @@
     "default_open_ai_model": null,
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-3-5-sonnet-20240620"
+      "model": "claude-3-5-sonnet-latest"
     }
   },
   "base_keymap": "SublimeText",
