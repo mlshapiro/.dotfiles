@@ -13,7 +13,6 @@
 	],
 	"ignored_packages":
 	[
-		"AutoDocstring",
 		"Vintage",
 	],
 	"theme": "Adaptive.sublime-theme",
