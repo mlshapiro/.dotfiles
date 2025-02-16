@@ -81,8 +81,6 @@ macos:
 	brew install stow
 	brew install restic
 	brew install rclone
-	brew install koekeishiya/formulae/yabai
-	brew install koekeishiya/formulae/skhd
 
 	# terminal
 	brew install ripgrep
@@ -124,8 +122,6 @@ macos:
 	stow -t $(HOME) zed
 	stow -t $(HOME) wezterm
 	stow -t $(HOME) -d os/macos git
-	stow -t $(HOME) -d os/macos skhd
-	stow -t $(HOME) -d os/macos yabai
 	stow -t $(HOME) -d os/macos Library
 	stow -t $(HOME)/Library/Application\ Support/Sublime\ Text/Packages sublime-text
 	# stow -t $(HOME) fish
